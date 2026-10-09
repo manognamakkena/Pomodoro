@@ -1,0 +1,46 @@
+html,body {
+    overflow: hidden;
+}
+
+
+.landing{
+    background-color: #59cee0
+}
+
+.wrapper{
+    position: relative;
+    display: grid;
+    z-index: 1;
+    justify-content: center;
+}
+
+.grid{
+    position: relative;
+    max-width: fit-content;
+    max-height: auto;
+}
+
+.logo{
+    position: absolute;
+    justify-self: center;
+    justify-content: center;
+    max-width: 60%;
+    top: 20vh;
+}
+
+.go{
+    background-color: white;
+    border-radius: 1vh;
+    border-color: #59cee0;
+    color: #59cee0;
+    padding: 3vh;
+    justify-content: center;
+    justify-self: center;
+    position: absolute;
+    top: 60vh;
+    left: 42.5em;
+}
+
+.timerBody{
+    background-color: #59cee0;
+}
