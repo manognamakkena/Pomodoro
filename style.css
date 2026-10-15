@@ -1,16 +1,12 @@
-/*html,body {
-    overflow: hidden;
-}*/
-
 
 .landing{
-    background-color: #59cee0
+    background-color: #59cee0;
+    background-image: url(/assets/grid.png)
 }
 
 .wrapper{
     position: relative;
     display: grid;
-    z-index: 1;
     justify-content: center;
 }
 
@@ -46,12 +42,12 @@
     top: 60vh;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
     cursor: pointer;
 }
 
 .timerBody{
     background-color: #59cee0;
+    background-image: url(assets/grid.png);
 }
 
 .globeContainer{
@@ -64,57 +60,89 @@
     justify-self: center;
     left: 10vh;
     top: 10vh;
-    z-index: 2;
     max-width: 70vh;
     max-height: auto;
     display: block;
 }
 
 .timerBlock{
-    background-color: #ffffff;
+    font-family: Tropi Land;
+    background-color: #ffffff79;
     border-radius: 10px;
-    border: 5px solid #00c1df;
-    z-index: 2;
+    border: none;
     position: absolute;
     justify-self: center;
     left: 85vh;
     top: 8vh;
     height: 28vh;
     width: 80vh;
-    display: block;
+    display: flex;
     align-content: center;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     font-size: 25vh;
+    color: #00c1df;
 }
 
 .input{
     position: absolute;
-    z-index: 2;
     left: 105vh;
     top: 40vh;
 }
 
-.input::-webkit-inner-spin-button
-.input::-webkit-outer-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
+.custom-radio{
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
 }
 
-.input:hover::-webkit-inner-spin-button,
-.input:hover::-webkit-outer-spin-button{
-        -webkit-appearance: none;
-        margin: 0;
-    }
+.custom-radio input[type="radio"]{
+    appearance: none;
+    background-color: #ffffff;
 
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 2px #05cae8;
+
+    display: grid;
+    place-content: center;
+}
+
+.custom-radio input[type="radio"]::before{
+    content: "";
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    transform: scale(0);
+
+    box-shadow: inset 1em 1em #28cae3;
+}
+
+.custom-radio input[type="radio"]:checked{
+    border-color: #00c1df;
+}
+
+.custom-radio input[type="radio"]:checked::before{
+    transform: scale(1);
+}
+
+.start{
+    border-radius: 20px;
+    border: none;
+    background-color: #ffffff;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+}
 .playlist{
     max-width: 80vh;
     height: 40vh;
     position: absolute;
     left: 85vh;
     top: 45vh;
-    z-index: 2;
 }
-
 
 .snowman{
     scale: 15%;
@@ -124,7 +152,6 @@
     position: absolute;
     left: 75vh;
     top: 60vh;
-    z-index: 2;
     border-radius: 10px;
 }
 
@@ -133,9 +160,8 @@
 }
 
 .scene{
-    background-color: #ffffff;
+    background-color: #ffffff79;
     border-radius: 10px;
-    z-index: 2;
     position: absolute;
     justify-self: center;
     left: 113vh;
@@ -146,4 +172,3 @@
     align-content: center;
     text-align: center;
 }
-
