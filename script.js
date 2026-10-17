@@ -1,18 +1,28 @@
 const startButton = document.getElementById('start');
+const pauseButton = document.getElementById('pause');
 const countdownDisplay = document.querySelector('.timerBlock');
 
 let countdownInterval;
+let timeLeft=0;
+let isRunning = false;
 
 startButton.addEventListener('click', () => {
-    const selectedRadio = document.querySelector('input[name="min"]:checked');
-    if(!selectedRadio) return;
+    if (isRunning) return;
 
-    const minutes = selectedRadio.value;
-    if(minutes==='') return;
-    let timeLeft = minutes * 60;
+    if(timeLeft<=0){
+        const selectedRadio = document.querySelector('input[name="min"]:checked');
+        if(!selectedRadio) return;
 
+        const minutes = selectedRadio.value;
+        if(minutes==='') return;
+        timeLeft = minutes * 60;
+
+        clearInterval(countdownInterval);
+        countdownDisplay.innerText = `${String(minutes).padStart(2, '0')}:00`;
+    }
+   
+    isRunning=true;
     clearInterval(countdownInterval);
-    countdownDisplay.innerText = `${String(minutes).padStart(2, '0')}:00`;
 
     countdownInterval = setInterval(() => {
         timeLeft--;
@@ -24,6 +34,14 @@ startButton.addEventListener('click', () => {
         if(timeLeft <= 0){
             clearInterval(countdownInterval);
             countdownDisplay.innerText = '00:00';
+            
         }
     },1000);
+   })
+   
+    pauseButton.addEventListener('click', () => {
+        clearInterval(countdownInterval);
+        isRunning=false;
+
+
 });

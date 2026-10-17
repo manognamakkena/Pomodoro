@@ -10,6 +10,8 @@
     <body class="timerBody">
         <div class="globeContainer">
             <img src="assets/snowglobe.png" class="globe">
+            <img src="assets/snow02.gif" class="snowOverlay">
+            <img src="assets/home-globe.png" class="globeEmpty">
         </div>
 
         <div class="timerBlock">
@@ -20,17 +22,22 @@
             <label class = "custom-radio"><input type="radio" name="min" value="25"> 25 </label>
             <label class = "custom-radio"><input type="radio" name="min" value="50"> 50 </label>
             <label class = "custom-radio"><input type="radio" name="min" value="60"> 60 </label>
-        
-            <button id="start" class="start"> ▶ </button>
         </div>
 
-        <iframe class="playlist" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5A71wQZamgz6yZq4vKo91y?utm_source=generator&si=6d5f874840be42f5" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="controls">
+            <button id="start" class="start"> ▶ </button>
+            <button id="pause" class="pause"> | | </button>
+        </div>
 
+    <iframe class="playlist" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&si=209093018bdd4f23" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <div class = "snowman">
             <img src="assets/pfp.jpg" class="snowmanImg">
         </div>
+
         <div class="scene">
-            HIHIHIHI
+            <video class="snowScene" autoplay loop muted playsinline>
+                <source src="assets/snowScene.mp4" type="video/mp4">
+            </video>
         </div>
     </body>
 </html>
