@@ -1,6 +1,7 @@
 const startButton = document.getElementById('start');
 const pauseButton = document.getElementById('pause');
 const countdownDisplay = document.querySelector('.timerBlock');
+const audio = new Audio('assets/alarm.mp3');
 
 let countdownInterval;
 let timeLeft=0;
@@ -34,7 +35,7 @@ startButton.addEventListener('click', () => {
         if(timeLeft <= 0){
             clearInterval(countdownInterval);
             countdownDisplay.innerText = '00:00';
-            
+            audio.play();
         }
     },1000);
    })
@@ -42,6 +43,5 @@ startButton.addEventListener('click', () => {
     pauseButton.addEventListener('click', () => {
         clearInterval(countdownInterval);
         isRunning=false;
-
 
 });
